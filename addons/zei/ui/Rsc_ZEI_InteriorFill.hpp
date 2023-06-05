@@ -38,10 +38,10 @@ class Rsc_ZEI_InteriorFill
 		w = "0.139219 * safezoneW";
 		h = "0.022 * safezoneH";
 		tooltip = "Type of interior to fill";
-		onLoad= "_this spawn {\
-			waitUntil { !isNull (_this select 0) };\
-			{ (findDisplay 1705 displayCtrl 10) lbAdd _x } forEach ['Military', 'Civilian'];\
-			(findDisplay 1705 displayCtrl 10) lbSetCurSel (missionNamespace getVariable ['ZEI_UiInteriorType', 0]);\
+		onLoad= "_this spawn {
+			waitUntil { !isNull (_this select 0) };
+			{ (findDisplay 1705 displayCtrl 10) lbAdd _x } forEach ['Military', 'Civilian'];
+			(findDisplay 1705 displayCtrl 10) lbSetCurSel (missionNamespace getVariable ['ZEI_UiInteriorType', 0]);
 		}";
 	};
 	class ZEI_IF_Text_Type: ZEI_RscText
@@ -71,10 +71,10 @@ class Rsc_ZEI_InteriorFill
 		h = "0.033 * safezoneH";
 		tooltip = "Radius of buildings to fill";
 		onSliderPosChanged = "if (round (_this select 1) > 0) then { (findDisplay 1705 displayCtrl 2) ctrlSetText format['Radius: %1 Meters', round (_this select 1)]; } else { (findDisplay 1705 displayCtrl 2) ctrlSetText 'Radius: Nearest'; };";
-		onLoad= "_this spawn {\
-			waitUntil { !isNull (_this select 0) };\
-			(findDisplay 1705 displayCtrl 20) sliderSetRange [ 0, 250 ];\
-			(findDisplay 1705 displayCtrl 20) sliderSetPosition 0;\
+		onLoad= "_this spawn {
+			waitUntil { !isNull (_this select 0) };
+			(findDisplay 1705 displayCtrl 20) sliderSetRange [ 0, 250 ];
+			(findDisplay 1705 displayCtrl 20) sliderSetPosition 0;
 		};";
 	};
 	class ZEI_IF_Text_Detail: ZEI_RscText
@@ -94,10 +94,10 @@ class Rsc_ZEI_InteriorFill
 		w = "0.139219 * safezoneW";
 		h = "0.022 * safezoneH";
 		tooltip = "Level of complexity for interiors";
-		onLoad= "_this spawn {\
-			waitUntil { !isNull (_this select 0) };\
-			{ (findDisplay 1705 displayCtrl 50) lbAdd _x } forEach ['Defences Only', 'Full'];\
-			(findDisplay 1705 displayCtrl 50) lbSetCurSel (missionNamespace getVariable ['ZEI_UiInteriorDetail', 1]);\
+		onLoad= "_this spawn {
+			waitUntil { !isNull (_this select 0) };
+			{ (findDisplay 1705 displayCtrl 50) lbAdd _x } forEach ['Defences Only', 'Full'];
+			(findDisplay 1705 displayCtrl 50) lbSetCurSel (missionNamespace getVariable ['ZEI_UiInteriorDetail', 1]);
 		}";
 	};
 	class ZEI_IF_Text_EditObject: ZEI_RscText
@@ -108,8 +108,8 @@ class Rsc_ZEI_InteriorFill
 		y = "0.501 * safezoneH + safezoneY";
 		w = "0.0845 * safezoneW";
 		h = "0.022 * safezoneH";
-		onLoad= "_this spawn { waitUntil { !isNull (_this select 0) };\
-			if is3DEN then { (findDisplay 1705 displayCtrl 3) ctrlShow FALSE; };\
+		onLoad= "_this spawn { waitUntil { !isNull (_this select 0) };
+			if is3DEN then { (findDisplay 1705 displayCtrl 3) ctrlShow FALSE; };
 		}";
 	};
 	class ZEI_IF_CheckBox_EditObject: ZEI_RscCheckBox
@@ -121,9 +121,9 @@ class Rsc_ZEI_InteriorFill
 		h = "0.033 * safezoneH";
 		tooltip = "Add the spawned objects to Curator\nIf disabled, they cannot be moved or edited by Zeus.";
 		checked = 1;
-		onLoad= "_this spawn { waitUntil { !isNull (_this select 0) };\
-			(findDisplay 1705 displayCtrl 30) cbSetChecked (missionNamespace getVariable ['ZEI_UiInteriorEdit', TRUE]);\
-			if is3DEN then { (findDisplay 1705 displayCtrl 30) ctrlShow FALSE; };\
+		onLoad= "_this spawn { waitUntil { !isNull (_this select 0) };
+			(findDisplay 1705 displayCtrl 30) cbSetChecked (missionNamespace getVariable ['ZEI_UiInteriorEdit', TRUE]);
+			if is3DEN then { (findDisplay 1705 displayCtrl 30) ctrlShow FALSE; };
 		}";
 	};
 	class ZEI_IF_Text_AllowDamage: ZEI_RscText
@@ -134,8 +134,8 @@ class Rsc_ZEI_InteriorFill
 		y = "0.545 * safezoneH + safezoneY";
 		w = "0.0845 * safezoneW";
 		h = "0.022 * safezoneH";
-		onLoad= "_this spawn { waitUntil { !isNull (_this select 0) };\
-			if is3DEN then { (findDisplay 1705 displayCtrl 4) ctrlShow FALSE; };\
+		onLoad= "_this spawn { waitUntil { !isNull (_this select 0) };
+			if is3DEN then { (findDisplay 1705 displayCtrl 4) ctrlShow FALSE; };
 		}";
 	};
 	class ZEI_IF_CheckBox_AllowDamage: ZEI_RscCheckBox
@@ -146,9 +146,9 @@ class Rsc_ZEI_InteriorFill
 		w = "0.020625 * safezoneW";
 		h = "0.033 * safezoneH";
 		tooltip = "Allow the building to be damaged.\nIf enabled, all objects inside the building may be left 'floating' when damaged/destroyed.";
-		onLoad= "_this spawn { waitUntil { !isNull (_this select 0) };\
-			(findDisplay 1705 displayCtrl 40) cbSetChecked (missionNamespace getVariable ['ZEI_UiInteriorDamage', FALSE]);\
-			if is3DEN then { (findDisplay 1705 displayCtrl 40) ctrlShow FALSE; };\
+		onLoad= "_this spawn { waitUntil { !isNull (_this select 0) };
+			(findDisplay 1705 displayCtrl 40) cbSetChecked (missionNamespace getVariable ['ZEI_UiInteriorDamage', FALSE]);
+			if is3DEN then { (findDisplay 1705 displayCtrl 40) ctrlShow FALSE; };
 		}";
 	};
 	class ZEI_IF_Button_OK: ZEI_RscButton

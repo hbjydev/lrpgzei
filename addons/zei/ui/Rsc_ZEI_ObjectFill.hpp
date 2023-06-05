@@ -53,10 +53,10 @@ class Rsc_ZEI_ObjectFill
 		y = "0.368 * safezoneH + safezoneY";
 		w = "0.139219 * safezoneW";
 		h = "0.022 * safezoneH";
-		onLoad= "_this spawn {\
-			waitUntil { !isNull (_this select 0) };\
-			{ (findDisplay 1704 displayCtrl 10) lbAdd _x } forEach ['Random', 'Food', 'Medical', 'Office', 'Tools', 'Electric', 'CBRN Cleaning'];\
-			(findDisplay 1704 displayCtrl 10) lbSetCurSel 0;\
+		onLoad= "_this spawn {
+			waitUntil { !isNull (_this select 0) };
+			{ (findDisplay 1704 displayCtrl 10) lbAdd _x } forEach ['Random', 'Food', 'Medical', 'Office', 'Tools', 'Electric', 'CBRN Cleaning'];
+			(findDisplay 1704 displayCtrl 10) lbSetCurSel 0;
 		}";
 	};
 	class ZEI_OF_Text_Type: ZEI_RscText
@@ -86,10 +86,10 @@ class Rsc_ZEI_ObjectFill
 		h = "0.033 * safezoneH";
 		tooltip = "Chance to spawn an object";
 		onSliderPosChanged = "(findDisplay 1704 displayCtrl 2) ctrlSetText format['Fill Percent (%1)', round (_this select 1) * 10];";
-		onLoad= "_this spawn {\
-			waitUntil { !isNull (_this select 0) };\
-			(findDisplay 1704 displayCtrl 20) sliderSetRange [ 1, 10 ];\
-			(findDisplay 1704 displayCtrl 20) sliderSetPosition 3;\
+		onLoad= "_this spawn {
+			waitUntil { !isNull (_this select 0) };
+			(findDisplay 1704 displayCtrl 20) sliderSetRange [ 1, 10 ];
+			(findDisplay 1704 displayCtrl 20) sliderSetPosition 3;
 			};";
 	};
 	class ZEI_OF_Text_EditObject: ZEI_RscText
@@ -100,8 +100,8 @@ class Rsc_ZEI_ObjectFill
 		y = "0.467 * safezoneH + safezoneY";
 		w = "0.0845 * safezoneW";
 		h = "0.022 * safezoneH";
-		onLoad= "_this spawn { waitUntil { !isNull (_this select 0) };\
-			if is3DEN then { (findDisplay 1704 displayCtrl 3) ctrlShow FALSE; };\
+		onLoad= "_this spawn { waitUntil { !isNull (_this select 0) };
+			if is3DEN then { (findDisplay 1704 displayCtrl 3) ctrlShow FALSE; };
 		}";
 	};
 	class ZEI_OF_CheckBox_EditObject: ZEI_RscCheckBox
@@ -113,8 +113,8 @@ class Rsc_ZEI_ObjectFill
 		h = "0.033 * safezoneH";
 		tooltip = "Allow Zeus to Move/Edit Objects";
 		checked = 1;
-		onLoad= "_this spawn { waitUntil { !isNull (_this select 0) };\
-			if is3DEN then { (findDisplay 1704 displayCtrl 30) ctrlShow FALSE; };\
+		onLoad= "_this spawn { waitUntil { !isNull (_this select 0) };
+			if is3DEN then { (findDisplay 1704 displayCtrl 30) ctrlShow FALSE; };
 		}";
 	};
 	class ZEI_OF_Button_OK: ZEI_RscButton

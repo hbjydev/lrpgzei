@@ -68,11 +68,11 @@ class Rsc_ZEI_GarrisonBuilding
 		h = "0.033 * safezoneH";
 		tooltip = "Change the number of the units.";
 		onSliderPosChanged = "(findDisplay 1702 displayCtrl 2) ctrlSetText format['No. of Units (%1)', round (_this select 1)];";
-		onLoad= "_this spawn {\
-			waitUntil { !isNull (_this select 0) };\
-			(findDisplay 1702 displayCtrl 20) sliderSetRange [ 1, (count ((missionNamespace getVariable ['ZEI_UiLastBuilding',objNull]) buildingPos -1)) ];\
-			(findDisplay 1702 displayCtrl 20) sliderSetPosition round ((count ((missionNamespace getVariable ['ZEI_UiLastBuilding',objNull]) buildingPos -1)) / 3);\
-			(findDisplay 1702 displayCtrl 2) ctrlSetText format['No. of Units (%1)', round ((count ((missionNamespace getVariable ['ZEI_UiLastBuilding',objNull]) buildingPos -1)) / 3)];\
+		onLoad= "_this spawn {
+			waitUntil { !isNull (_this select 0) };
+			(findDisplay 1702 displayCtrl 20) sliderSetRange [ 1, (count ((missionNamespace getVariable ['ZEI_UiLastBuilding',objNull]) buildingPos -1)) ];
+			(findDisplay 1702 displayCtrl 20) sliderSetPosition round ((count ((missionNamespace getVariable ['ZEI_UiLastBuilding',objNull]) buildingPos -1)) / 3);
+			(findDisplay 1702 displayCtrl 2) ctrlSetText format['No. of Units (%1)', round ((count ((missionNamespace getVariable ['ZEI_UiLastBuilding',objNull]) buildingPos -1)) / 3)];
 		};";
 	};
 
@@ -94,10 +94,8 @@ class Rsc_ZEI_GarrisonBuilding
 		w = "0.020625 * safezoneW";
 		h = "0.033 * safezoneH";
 		tooltip = "Enables Dynamic Simulation for units\nDO NOT use when AI can easily be seen (e.g. outside or top of buildings).";
-		onLoad= "_this spawn {\
-			waitUntil { !isNull (_this select 0) };\
-			(findDisplay 1702 displayCtrl 30) cbSetChecked (missionNamespace getVariable ['ZEI_UiGarrisonDynamic', FALSE]);\
-		};";
+		onLoad= "_this spawn {
+			waitUntil { !isNull (_this select 0) }; (findDisplay 1702 displayCtrl 30) cbSetChecked (missionNamespace getVariable ['ZEI_UiGarrisonDynamic', FALSE]); };";
 	};
 
 	class ZEI_GB_Text_TREnabled: ZEI_RscText
@@ -118,9 +116,9 @@ class Rsc_ZEI_GarrisonBuilding
 		w = "0.020625 * safezoneW";
 		h = "0.033 * safezoneH";
 		tooltip = "Creates a Trigger to allow AI movement when a player is near.";
-		onLoad= "_this spawn {\
-			waitUntil { !isNull (_this select 0) };\
-			(findDisplay 1702 displayCtrl 40) cbSetChecked (missionNamespace getVariable ['ZEI_UiCreateTrigger', FALSE]);\
+		onLoad= "_this spawn {
+			waitUntil { !isNull (_this select 0) };
+			(findDisplay 1702 displayCtrl 40) cbSetChecked (missionNamespace getVariable ['ZEI_UiCreateTrigger', FALSE]);
 		};";
 	};
 
@@ -132,11 +130,11 @@ class Rsc_ZEI_GarrisonBuilding
 		y = "0.522 * safezoneH + safezoneY";
 		w = "0.04125 * safezoneW";
 		h = "0.022 * safezoneH";
-		onButtonClick  = "[\
-			(findDisplay 1702 displayCtrl 10) lbData (lbCurSel (findDisplay 1702 displayCtrl 10)),\
-			round (sliderPosition (findDisplay 1702 displayCtrl 20)),\
-			cbChecked (findDisplay 1702 displayCtrl 30),\
-			cbChecked (findDisplay 1702 displayCtrl 40)\
+		onButtonClick  = "[
+			(findDisplay 1702 displayCtrl 10) lbData (lbCurSel (findDisplay 1702 displayCtrl 10)),
+			round (sliderPosition (findDisplay 1702 displayCtrl 20)),
+			cbChecked (findDisplay 1702 displayCtrl 30),
+			cbChecked (findDisplay 1702 displayCtrl 40)
 			] spawn ZEI_fnc_ui_garrisonBuilding; (findDisplay 1702) closeDisplay 1;";
 	};
 

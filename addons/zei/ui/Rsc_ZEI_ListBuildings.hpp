@@ -53,10 +53,10 @@ class Rsc_ZEI_ListBuildings
 		y = "0.368 * safezoneH + safezoneY";
 		w = "0.139219 * safezoneW";
 		h = "0.022 * safezoneH";
-		onLoad= "_this spawn {\
-			waitUntil { !isNull (_this select 0) };\
-			{ (findDisplay 1703 displayCtrl 10) lbAdd _x } forEach ['All', 'Civilian', 'Military'];\
-			(findDisplay 1703 displayCtrl 10) lbSetCurSel 0;\
+		onLoad= "_this spawn {
+			waitUntil { !isNull (_this select 0) };
+			{ (findDisplay 1703 displayCtrl 10) lbAdd _x } forEach ['All', 'Civilian', 'Military'];
+			(findDisplay 1703 displayCtrl 10) lbSetCurSel 0;
 		}";
 	};
 	class ZEI_LB_Text_Matching: ZEI_RscText
@@ -94,10 +94,10 @@ class Rsc_ZEI_ListBuildings
 		w = "0.144375 * safezoneW";
 		h = "0.033 * safezoneH";
 		onSliderPosChanged = "if (round (_this select 1) > 0) then { (findDisplay 1703 displayCtrl 2) ctrlSetText format['(%1 or less)', round (_this select 1)]; } else { (findDisplay 1703 displayCtrl 2) ctrlSetText '(No Template)'; };";
-		onLoad= "_this spawn {\
-			waitUntil { !isNull (_this select 0) };\
-			(findDisplay 1703 displayCtrl 20) sliderSetRange [ 0, 15 ];\
-			(findDisplay 1703 displayCtrl 20) sliderSetPosition 15;\
+		onLoad= "_this spawn {
+			waitUntil { !isNull (_this select 0) };
+			(findDisplay 1703 displayCtrl 20) sliderSetRange [ 0, 15 ];
+			(findDisplay 1703 displayCtrl 20) sliderSetPosition 15;
 			};";
 	};
 	class ZEI_LB_Text_ShowPositions: ZEI_RscText
