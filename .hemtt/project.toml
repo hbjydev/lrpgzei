@@ -5,7 +5,7 @@ prefix = "zei"
 
 [files]
 include = [
-    "data/zeus.paa"
+    "zeus.paa"
 ]
 
 [hemtt.launch.default]

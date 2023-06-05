@@ -1,5 +1,5 @@
 name = "[LRPG] ZEI";
-picture = "data/zeus.paa";
+picture = "zeus.paa";
 actionName = "Website";
 action = "https://discord.gg/5VTVhZMjSa";
 tooltip = "ZEI 1.2";
