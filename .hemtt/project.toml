@@ -3,9 +3,16 @@ author = "[LRPG] Young"
 mainprefix = "lrpg"
 prefix = "zei"
 
+[files]
+include = [
+    "data/zeus.paa"
+]
+
 [hemtt.launch.default]
 workshop = [
-    "450814997" # CBA_A3
+    "450814997", # CBA_A3
+    "583496184", # CUP Terrains - Core
+    "1562675299", # Winter Chernarus
 ]
 parameters = [
     "-skipIntro",           # These parameters are passed to the Arma 3 executable
