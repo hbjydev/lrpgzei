@@ -16,7 +16,7 @@ private _customTemplate = missionNamespace getVariable [format["ZEI_%1_customBui
 
 if !(_customTemplate isEqualTo []) then {
 	private _path = [_customTemplate, _bldType] call BIS_fnc_findNestedElement;
-	
+
 	if !(_path isEqualTo []) then {
 		(_customTemplate # (_path # 0)) params ["", ["_values", [], [[]]]];
 		_templates append _values;
@@ -27,35 +27,41 @@ if (_tempType isEqualTo "mil") then {
 	_templates append (switch (_bldType) do {
 		// Vanilla
 		#include "..\templates\mil_vanilla.sqf"
-		
+
 		// CUP
 		#include "..\templates\mil_cup.sqf"
-		
+
 		// GM
 		#include "..\templates\mil_gm.sqf"
-		
+
 		// SOG
 		#include "..\templates\mil_sog.sqf"
-		
+
 		// WS
 		#include "..\templates\mil_ws.sqf"
-		
+
 		// OTHER
 		#include "..\templates\mil_other.sqf"
-		
+
+		// Winter Chernarus
+		#include "..\templates\mil_winterChernarus.sqf"
+
 		default {[]};
 	});
 } else {
 	_templates append (switch (_bldType) do {
 		// Vanilla
 		#include "..\templates\civ_vanilla.sqf"
-		
+
 		// CUP
 		#include "..\templates\civ_cup.sqf"
-		
+
 		// GM
 		#include "..\templates\civ_gm.sqf"
-		
+
+		// Winter Chernarus
+		#include "..\templates\civ_winterChernarus.sqf"
+
 		default {[]};
 	});
 };
