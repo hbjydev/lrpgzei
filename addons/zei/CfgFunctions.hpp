@@ -1,7 +1,7 @@
 class CfgFunctions {
 	class ZEI {
 		class Interiors {
-			file = "\zei\functions";
+			file = "\lrpg\addons\zei\functions";
 			class addCustomHouse {};
 			class addCustomTemplate {};
 			class checkDetailLevel {};		// InteriorFill
@@ -30,7 +30,7 @@ class CfgFunctions {
 			class zeus_addModules {};		// Zeus (Dedicated Fix)
 		};
 		class Rotation {
-			file = "\zei\functions";
+			file = "\lrpg\addons\zei\functions";
 			class misc_rotateAroundOwnAxisX {};
 			class misc_rotateAroundOwnAxisY {};
 			class misc_rotateAroundOwnAxisZ {};
