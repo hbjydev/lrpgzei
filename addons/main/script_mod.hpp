@@ -1,5 +1,5 @@
 #define MAINPREFIX lrpg
-#define PREFIX zei
+#define PREFIX lrpgzei
 
 #include "script_version.hpp"
 

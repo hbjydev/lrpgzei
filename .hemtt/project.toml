@@ -1,7 +1,7 @@
 name = "[LRPG] ZEI"
 author = "[LRPG] Young"
-mainprefix = "lrpg"
-prefix = "zei"
+mainprefix = "x"
+prefix = "lrpgzei"
 
 [files]
 include = [

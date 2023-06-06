@@ -1,2 +1,2 @@
 #define COMPONENT zei
-#include "\lrpg\zei\addons\main\script_macros.hpp"
+#include "\x\lrpgzei\addons\main\script_macros.hpp"
